@@ -8,12 +8,14 @@ import seaborn as sns
 
 nltk.download('vader_lexicon') 
 
-api_key=st.text_input("Enter your Groq API key",type="password")
-LLm=ChatGroq( 
-    api_key=api_key,
-    model="llama3-8b-8192",
-    temperature=0.5
-)
+api_key=st.sidebar.text_input("Enter your Groq API key",type="password")
+
+if api_key:
+    LLm=ChatGroq( 
+        api_key=api_key,
+        model="llama3-8b-8192",
+        temperature=0.5
+    )
 
 
 
